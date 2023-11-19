@@ -37,12 +37,15 @@ const Form = () => {
     <>
       {!showPanel && !loading && (
         <div className={styles.container}>
-          <h2>Dashtoon Comic Strips</h2>
-
+          <div className={styles.yes}>
+          <h3><span>Dashtoon</span> . Comic</h3>
+          <h2>Let's Create Together</h2>
+          </div>
+          <div className={styles.boxing}>
           {prompts.map((prompt, index) => {
             return (
               <TextArea
-                label={`Comic Strip ${index + 1}`}
+                label={`Comic Strip ${index + 1}:`}
                 value={prompt}
                 onChange={(e) => {
                   handleChange(index, e.target.value);
@@ -50,13 +53,15 @@ const Form = () => {
               />
             );
           })}
-
-          <div
+          </div>
+          <div className={styles.btn}
             style={{
+              width:"100%",
               display: "flex",
-              gap: "16px",
+              justifyContent:"space-between",
               marginTop: "12px",
               alignSelf: "flex-end",
+              
             }}
           >
             <SecondaryButton
